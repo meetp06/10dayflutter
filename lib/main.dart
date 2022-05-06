@@ -1,30 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:masterflutterapp/home_page.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Material(
-        child: Center(
-          // ignore: avoid_unnecessary_containers
-          child: Container(
-            child: const Text(
-              "Hi Flutter Buddies,\n\n    Meet is Here!",
-              style: TextStyle(
-                  color: Colors.deepPurple,
-                  fontSize: 25,
-                  letterSpacing: 4),
-            ),
-          ),
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }
