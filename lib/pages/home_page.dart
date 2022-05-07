@@ -7,23 +7,21 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Master App",
-          textAlign: TextAlign.center,
         ),
       ),
       body: Center(
         // ignore: avoid_unnecessary_containers
         child: Container(
           child: const Text(
-            "Hi Flutter  Buddies  \n\n    Meet is Here!",
+            "Hi Flutter Buddies ",
             // ignore: prefer_const_constructors
-            style: TextStyle(
-                color: Colors.deepPurple, fontSize: 25, letterSpacing: 4),
+            style: TextStyle(fontSize: 14),
           ),
         ),
       ),
-      drawer: const  Drawer(),
+      drawer: const Drawer(),
     );
   }
 }

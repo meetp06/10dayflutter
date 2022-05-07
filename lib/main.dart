@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:masterflutterapp/home_page.dart';
+import 'package:masterflutterapp/pages/home_page.dart';
+import 'package:masterflutterapp/pages/login_page.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -15,9 +18,19 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.cyan),
+      darkTheme: ThemeData(
+        brightness: Brightness.light,
+      ),
+      initialRoute: "/home",
+      routes: {
+        "/": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+      },
     );
   }
 }
