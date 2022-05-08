@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:masterflutterapp/pages/home_page.dart';
 import 'package:masterflutterapp/pages/login_page.dart';
+import 'package:masterflutterapp/utils/routes.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.indigo,
@@ -37,10 +38,9 @@ class _MyAppState extends State<MyApp> {
       initialRoute: "/login",
       routes: {
         "/": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoutes: (context) => LoginPage(),
       },
     );
   }
 }
- //fontFamily: "Myfont",
